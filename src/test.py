@@ -14,10 +14,10 @@ class InfoJugadorTest(unittest.TestCase):
 
     def testPerfilPublico(self):
         self.assertEqual(self.test.isPerfilPublico("Antonio"),False,"El battletag existe")
-        self.assertEqual(self.test.isPerfilPublico("JmZero"),str('Público'),"El perfil es público")
+        self.assertEqual(self.test.isPerfilPublico("JmZero"),str('Publico'),"El perfil es público")
 
     def testAddUser(self):
-        self.assertEqual(self.test.setJugador("JuSan", "Público"),True,"El jugador se añadió correctamente")
+        self.assertEqual(self.test.setJugador("JuSan", "Publico"),True,"El jugador se añadió correctamente")
 
 if __name__ == '__main__':
     unittest.main()
