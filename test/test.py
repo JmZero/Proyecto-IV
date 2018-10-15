@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+import sys
+sys.path.append('./src/')
 import infojugador
 
 class InfoJugadorTest(unittest.TestCase):

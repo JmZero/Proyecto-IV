@@ -6,7 +6,7 @@ import json
 class InfoJugador:
 
 	def __init__(self):
-		with open('jugadores.json', 'r') as f:
+		with open('./resrc/jugadores.json', 'r') as f:
 			self.ap = json.load(f)
 
 	# Función que devolverá el Id del jugador
