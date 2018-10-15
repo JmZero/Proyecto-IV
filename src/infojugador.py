@@ -32,7 +32,7 @@ class InfoJugador:
 	def setJugador(self, user, perfil):
 		try:
 			self.ap.append({"battletag":user, "perfil":perfil})
-			with open('jugadores.json', 'w') as f:
+			with open('./resrc/jugadores.json', 'w') as f:
 				json.dump(self.ap, f)
 			return True
 		except:
