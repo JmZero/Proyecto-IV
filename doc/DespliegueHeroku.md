@@ -1,16 +1,16 @@
 # Despliegue en Heroku
 
-En este apartado veremos con detenimiento como llevas a cabo el despliegue en [Heroku](https://www.heroku.com/), que es el PaaS elegido.
+En este apartado veremos con detenimiento como llevar a cabo el despliegue en [Heroku](https://www.heroku.com/), que es el PaaS elegido.
 
 ### Proceso
 1. **Registrarse en [Heroku](https://www.heroku.com/)**
 
-2. **Creacion de la aplicación**
+2. **Creación de la aplicación**
   ![newapp](https://github.com/JmZero/Proyecto-IV/blob/master/img/newapp.png)
 
 3. **Despliegue**
 
-  A la hora de realizar el despliegue tendremos que seleccionar la opción de **GitHub** que es donde estamos trabajando y activar la opción del despliegue automatico como se muestra en la imagen.
+  A la hora de realizar el despliegue tendremos que seleccionar la opción de **GitHub** que es donde estamos trabajando y activar la opción del despliegue automático como se muestra en la imagen.
   ![despliegue](https://github.com/JmZero/Proyecto-IV/blob/master/img/despliegue.png)
 
 4. **Crear un archivo Procfile**

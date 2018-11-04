@@ -11,8 +11,8 @@ Mediante el uso del BattleTag (o identificador de usuario) de un jugador podrás
 ## Herramientas
 * El lenguaje que utilizaremos para implementar el proyecto será [Python](https://www.python.org/). Se ha escogido este lenguaje dado que está en auge y últimamente es muy requerido su conocimiento.
 * Como framework se utilizará Flask. Mas adelante se intentara cambiar por [Hug](http://www.hug.rest). Esto está sustentado por una recomendación del profesor de la asignatura, JJMerelo.
-* La base de datos que usaré para almacenar todos los datos se llevará a cabo usando [MySQL](https://www.mysql.com/) o [MariaDB](https://mariadb.org/)
-* Como editor de texto se usará [Atom](https://atom.io/)
+* La base de datos que usaré para almacenar todos los datos se llevará a cabo usando [MySQL](https://www.mysql.com/) o [MariaDB](https://mariadb.org/).
+* Como editor de texto se usará [Atom](https://atom.io/).
 * Para realizar el testeo utilizaremos la biblioteca **unittest**.
 * En este punto del proyecto los datos estarán almacenados de manera estática, por lo que utilizaremos ficheros *JSON*.
 * Los test se harán haciendo uso de [Travis-CI](https://travis-ci.com/).
@@ -26,7 +26,7 @@ Como ya se ha mencionado antes usaremos Travis-CI para realizar la integración.
 Se va a testear la clase [infojugador.py](https://github.com/JmZero/Proyecto-IV/blob/master/src/infojugador.py) que contiene una información básica sobre el perfil de jugador, su nombre y su tipo de perfil, así como funciones para consultar si el jugador existe, si el perfil es público o no y para añadir una nueva cuenta de usuario.
 
 Para realizar los test tendremos que ejecutar el fichero [test.py](https://github.com/JmZero/Proyecto-IV/blob/master/src/test.py)
-Para mas información de como implementar la integración continua click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/InteracionContinua.md)
+Para más información de cómo implementar la integración continua click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/InteracionContinua.md)
 
 ### Depliegue por medio de Heroku
 
