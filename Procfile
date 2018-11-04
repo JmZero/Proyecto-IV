@@ -1,1 +1,1 @@
-web: gunicorn ./src/owstatistics-app:app --log-file -
+web: gunicorn owstatistics-app:app --log-file -
