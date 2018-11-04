@@ -19,10 +19,14 @@ Mediante el uso del BattleTag (o identificador de usuario) de un jugador podrás
 * En este punto del proyecto los datos estarán almacenados de manera estática, por lo que utilizaremos ficheros *JSON*.
 * Los test se harán haciendo uso de [Travis-CI](https://travis-ci.com/).
 
-## ntegración Continua
+## Integración Continua
 La integración continua consiste en la integración de los cambios hechos en el proyecto en el momento en el que estén y estos hayan pasado los test.
 Como ya se ha mencionado antes usaremos Travis-CI para realizar la integración.
+
+#### Travis [![Build Status](https://travis-ci.org/JmZero/Proyecto-IV.svg?branch=master)](https://travis-ci.org/JmZero/Proyecto-IV)
+
 Se va a testear la clase [infojugador.py](https://github.com/JmZero/Proyecto-IV/blob/master/src/infojugador.py) que contiene una información básica sobre el perfil de jugador, su nombre y su tipo de perfil, así como funciones para consultar si el jugador existe, si el perfil es público o no y para añadir una nueva cuenta de usuario.
+
 Para realizar los test tendremos que ejecutar el fichero [test.py](https://github.com/JmZero/Proyecto-IV/blob/master/src/test.py)
 Para mas información de como implementar la integración continua click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/InteracionContinua.md)
 
