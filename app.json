@@ -1,0 +1,7 @@
+{
+  "name": "OWStatistics",
+  "description": "Aplicacion donde se podrán consultar datos de perfiles de jugadores de OverWatch",
+  "repository": "https://github.com/JmZero/Proyecto-IV",
+  "logo":,
+  "keywords": ["python", "perfil", "privado", "publico"]
+}

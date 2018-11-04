@@ -11,10 +11,12 @@ En este apartado veremos con detenimiento como llevas a cabo el despliegue en [H
   ![newapp](https://github.com/JmZero/Proyecto-IV/blob/master/img/newapp.png)
 
 3. **Despliegue**
+
   A la hora de realizar el despliegue tendremos que seleccionar la opción de **GitHub** que es donde estamos trabajando y activar la opción del despliegue automatico como se muestra en la imagen.
   ![despliegue](https://github.com/JmZero/Proyecto-IV/blob/master/img/despliegue.png)
 
 4. **Crear un archivo Procfile**
+
   Este archivo será necesario porque será el utilizado por **Heroku** para ejecutar nuestra aplicación.
 
   ```
@@ -22,6 +24,7 @@ En este apartado veremos con detenimiento como llevas a cabo el despliegue en [H
   ```
 
 5. **Actualizar archivo requirements.txt**
+
   El archivo deberá de contener las dependencias de nuestra aplicación:
 
   ```
@@ -37,10 +40,3 @@ En este apartado veremos con detenimiento como llevas a cabo el despliegue en [H
   -[Ejemplo Jugador Público](https://owstatistics.herokuapp.com/player/JmZero)
   -[Ejemplo Jugador Privado](https://owstatistics.herokuapp.com/player/Neim)
   -[Ejemplo Error](https://owstatistics.herokuapp.com/player/)
-
-
-## Test
-Se han implementado varios test para comprobar la funcionalidad de la clase creada:
-* testBattleTag: Comprobará si el BattleTag introducido esta dentro de la lista y si es correcto.
-* testPerfilPublico: Comprobará si el perfil de jugador es público.
-* testAddUser: Comprobará si se añade un perfil correctamente.
