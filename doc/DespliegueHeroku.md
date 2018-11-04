@@ -1,7 +1,5 @@
 # Despliegue en Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
 En este apartado veremos con detenimiento como llevas a cabo el despliegue en [Heroku](https://www.heroku.com/), que es el PaaS elegido.
 
 ### Proceso
