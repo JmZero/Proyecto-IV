@@ -35,4 +35,4 @@ Para mas información de como implementar la integración continua click [aquí]
 Una vez registrados en [Heroku](https://www.heroku.com/) y realizado el despliegue de nuestra aplicación podemos ver el resultado del mismo:
 - [Despliegue](https://owstatistics.herokuapp.com/)
 
-Para ver el proceso de despliegue click [aqui](https://owstatistics.herokuapp.com/)
+Para ver el proceso de despliegue click [aqui](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueHeroku.md).
