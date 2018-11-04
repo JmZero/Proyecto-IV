@@ -8,6 +8,8 @@ Mediante el uso del BattleTag (o identificador de usuario) de un jugador podrás
 ## Licencia
 [![AGPL](https://camo.githubusercontent.com/cb1d26ec555a33e9f09fe279b5edc49996a3bb3b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4147504c25323076332d626c75652e737667)](https://www.gnu.org/licenses/agpl.html)
 
+[![Build Status](https://travis-ci.org/JmZero/Proyecto-IV.svg?branch=master)](https://travis-ci.org/JmZero/Proyecto-IV)
+
 ## Herramientas
 * El lenguaje que utilizaremos para implementar el proyecto será [Python](https://www.python.org/). Se ha escogido este lenguaje dado que está en auge y últimamente es muy requerido su conocimiento.
 * Como framework se utilizará [Hug](http://www.hug.rest). Esto está sustentado por una recomendación del profesor de la asignatura, JJMerelo.
