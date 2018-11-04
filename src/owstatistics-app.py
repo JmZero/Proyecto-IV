@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify
-#import sys
-#sys.path.append('./src/')
+import sys
+sys.path.append('./src/')
 import infojugador
 
 app = Flask(__name__)
