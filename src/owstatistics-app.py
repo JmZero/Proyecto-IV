@@ -14,7 +14,7 @@ def inicio():
 def Info(battletag):
 	p=funciones.InfoJugador()
 	datos=p.isPerfilPublico(battletag)
-	return jsonify(perfil=datos)
+	return jsonify(status="Ok")
 
 @app.errorhandler(404)
 def page_not_found(error):
