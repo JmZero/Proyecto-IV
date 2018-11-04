@@ -32,6 +32,7 @@ En este apartado veremos con detenimiento como llevar a cabo el despliegue en [H
   ```
 
 6. **Comprobar el despliegue de la aplicación**
+
   Para esto se dan las siguientes opciones:
 
   - [Principal](https://owstatistics.herokuapp.com/)
