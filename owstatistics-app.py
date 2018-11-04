@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-	open('status.json') as f:
+	with open('status.json') as f:
     	resp = json.load(f)
 	return resp
 
