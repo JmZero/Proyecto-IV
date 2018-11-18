@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 EXPOSE 80
 
 # Run app.py when the container launches
-CMD ["python3", "owstatistics-app.py"]
+CMD ["python", "owstatistics-app.py"]
