@@ -12,6 +12,10 @@ app = Flask(__name__)
 def inicio():
 	return jsonify(status="Ok")
 
+@app.route('/status')
+def inicio():
+	return jsonify(status="Ok")
+
 @app.route('/player/<battletag>')
 def info(battletag):
 	p=infojugador.InfoJugador()
