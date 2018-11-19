@@ -13,7 +13,7 @@ def inicio():
 	return jsonify(status="Ok")
 
 @app.route('/status')
-def inicio():
+def status():
 	return jsonify(status="Ok")
 
 @app.route('/player/<battletag>')
