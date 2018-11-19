@@ -18,7 +18,7 @@ Mediante el uso del BattleTag (o identificador de usuario) de un jugador podrás
 * [Docker Hub](https://hub.docker.com/).
 
 ## Integración Continua
-Para llevar a cabo la Integración continua usaremos [Travis-CI](https://travis-ci.com/) como podemos ver en las herramientas. Esta estará vinculada a nuestro repositorio del proyecto.
+Para llevar a cabo la Integración Continua usaremos [Travis-CI](https://travis-ci.com/) como podemos ver en las herramientas. Esta estará vinculada a nuestro repositorio del proyecto.
 
 ### Travis [![Build Status](https://travis-ci.org/JmZero/Proyecto-IV.svg?branch=master)](https://travis-ci.org/JmZero/Proyecto-IV)
 
@@ -34,7 +34,7 @@ Para más información de cómo implementar la integración continua click [aqu�
 Una vez registrados en [Heroku](https://www.heroku.com/) y realizado el despliegue de nuestra aplicación podemos ver el resultado del mismo:
 - [Despliegue](https://owstatistics-app.herokuapp.com/)
 
-Para ver el proceso de despliegue click [aqui](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueHeroku.md).
+Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueHeroku.md).
 
 ### Despliegue en Docker Hub
 
@@ -42,4 +42,4 @@ Para ver el proceso de despliegue click [aqui](https://github.com/JmZero/Proyect
 
 - Enlace al despliegue en Heroku (con el contenedor): [Despliegue Heroku](https://owstatistics.herokuapp.com/)
 
-Para ver el proceso de despliegue click [aqui](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueDockerHub.md).
+Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueDockerHub.md).
