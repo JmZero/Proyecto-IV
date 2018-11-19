@@ -35,7 +35,7 @@ En este apartado veremos con detenimiento como llevar a cabo el despliegue en [H
 
   Para esto se dan las siguientes opciones:
 
-  - [Principal](https://owstatistics.herokuapp.com/)
-  - [Ejemplo Jugador Público](https://owstatistics.herokuapp.com/player/JmZero)
-  - [Ejemplo Jugador Privado](https://owstatistics.herokuapp.com/player/Neim)
-  - [Ejemplo Error](https://owstatistics.herokuapp.com/player/)
+  - [Principal](https://owstatistics-app.herokuapp.com/)
+  - [Ejemplo Jugador Público](https://owstatistics-app.herokuapp.com/player/JmZero)
+  - [Ejemplo Jugador Privado](https://owstatistics-app.herokuapp.com/player/Neim)
+  - [Ejemplo Error](https://owstatistics-app.herokuapp.com/player/)
