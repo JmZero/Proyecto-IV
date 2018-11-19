@@ -7,11 +7,11 @@ WORKDIR /app
 # Copiar los contenido del resositorio actucal al de la aplización
 COPY . /app
 
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
 # Instalar las librerias necesarias de requirements.txt
 RUN pip install -r requirements.txt
 
-# Establece el puerto 80 por defecto
-EXPOSE 80
-
 # Run app.py when the container launches
-CMD ["python", "owstatistics-app.py"]
+CMD gunicorn owstatistics-app:app --log-file -
