@@ -8,15 +8,6 @@ Mediante el uso del BattleTag (o identificador de usuario) de un jugador podrás
 ## Licencia
 [![AGPL](https://camo.githubusercontent.com/cb1d26ec555a33e9f09fe279b5edc49996a3bb3b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4147504c25323076332d626c75652e737667)](https://www.gnu.org/licenses/agpl.html)
 
-## Herramientas
-* [Python](https://www.python.org/).
-* [Flask](http://flask.pocoo.org/).
-* [MySQL](https://www.mysql.com/) o [MariaDB](https://mariadb.org/).
-* **unittest**.
-* [Travis-CI](https://travis-ci.com/).
-* [Heroku](https://www.heroku.com/).
-* [Docker Hub](https://hub.docker.com/).
-
 ## Integración Continua
 Para llevar a cabo la Integración Continua usaremos [Travis-CI](https://travis-ci.com/) como podemos ver en las herramientas. Esta estará vinculada a nuestro repositorio del proyecto.
 
