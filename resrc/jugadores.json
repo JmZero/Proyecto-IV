@@ -1,1 +1,6 @@
-[{"perfil": "Publico", "battletag": "JmZero"}, {"perfil": "Privado", "battletag": "Neim"}, {"perfil": "Publico", "battletag": "JuSan"}, {"perfil": "Publico", "battletag": "JACKIN"}, {"perfil": "Publico", "battletag": "Espectro123"}, {"perfil": "Publico", "battletag": "JuSan"}, {"perfil": "Publico", "battletag": "JuSan"}, {"perfil": "Publico", "battletag": "JuSan"}]
+[{"perfil": "Publico", "battletag": "JmZero", "nivel": "590", "top5":["Reinhardt", "D.Va", "Orisa", "Genji", "Reaper"]},
+  {"perfil": "Privado", "battletag": "Neim", "nivel": "385"},
+  {"perfil": "Publico", "battletag": "JuSan", "nivel": "590", "top5":["D.Va", "Reinhardt", "Reaper", "Orisa", "Moira"]},
+  {"perfil": "Publico", "battletag": "JACKIN", "nivel": "64"},
+  {"perfil": "Publico", "battletag": "Espectro123", "nivel": "456"}
+]
