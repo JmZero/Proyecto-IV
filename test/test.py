@@ -18,8 +18,14 @@ class InfoJugadorTest(unittest.TestCase):
         self.assertEqual(self.test.isPerfilPublico("Antonio"),False,"El battletag existe")
         self.assertEqual(self.test.isPerfilPublico("JmZero"),str('Publico'),"El perfil es privado")
 
+    def testLvl(self):
+        self.assertEqual(1 <= self.test.getNivel("JmZero") <= 2500, True,"El nivel es correcto")
+
     def testAddUser(self):
         self.assertEqual(self.test.setJugador("JuSan", "Publico"),True,"El jugador se añadió correctamente")
+
+    def testLvl(self):
+        self.assertEqual(1 <= self.test.getNivel("JmZero") <= 2500, True,"El nivel es correcto")
 
 if __name__ == '__main__':
     unittest.main()
