@@ -28,6 +28,22 @@ class InfoJugador:
 		except:
 			return False
 
+	# Función que devolverá el nivel del jugador
+	def getNivel(self, user):
+		for i in self.ap:
+			if i["battletag"] == user:
+				return i["nivel"]
+			else:
+				return False
+
+	# Función que devolverá el top 5 de personajes mas jugador por el jugador
+	def getTop5(self, user):
+		for i in self.ap:
+			if i["battletag"] == user and i["perfil"] != "Privado":
+				return i["top5"]
+			else:
+				return False
+
 	# Función que añadirá un nuevo jugador
 	def setJugador(self, user, perfil):
 		try:
