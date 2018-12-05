@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 import sys
 sys.path.append('./src/')
 import infojugador
+import json
 
 app = Flask(__name__)
 
@@ -13,9 +14,9 @@ app = Flask(__name__)
 def inicio():
 	status = infojugador.status()
 
-    if status == 'OK':
-        with open('status.json') as f:
-            salida = json.load(f)
+	if status == 'OK':
+		with open('status.json') as f:
+			salida = json.load(f)
 	return salida
 
 @app.route('/player/<battletag>')
