@@ -11,7 +11,10 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/status')
 def inicio():
-	status=infojugador.status()
+	p=infojugador.InfoJugador()
+	status=p.status()
+
+
 	#if status == 'OK':
 		#return jsonify(status="Ok")
 	#else:
