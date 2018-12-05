@@ -9,20 +9,19 @@ import infojugador
 app = Flask(__name__)
 
 @app.route('/')
-def inicio():
-	return jsonify(status="Ok")
-
 @app.route('/status')
-def status():
+def inicio():
 	return jsonify(status="Ok")
 
 @app.route('/player/<battletag>')
 def info(battletag):
 	p=infojugador.InfoJugador()
-	datos=p.isPerfilPublico(battletag)
-	if datos == False:
-		datos = 'Privado'
-	return jsonify(perfil=datos)
+	perfil=p.isPerfilPublico(battletag)
+	nivel=p.getNivel(battletag)
+	if perfil == False:
+		perfil = 'Privado'
+
+	return jsonify(perfil=datos, nivel=nivel)
 
 @app.errorhandler(404)
 def page_not_found(error):
