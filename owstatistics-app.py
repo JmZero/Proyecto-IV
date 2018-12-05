@@ -14,8 +14,9 @@ app = Flask(__name__)
 def inicio():
 	status = infojugador.status()
 
-	if status == 'OK':
-		return jsonify(status="Ok")
+	return jsonify(status=status)
+	#if status == 'OK':
+		#return jsonify(status="Ok")
 	#else:
 		#with open('status.json') as f:
 			#salida = json.load(f)
