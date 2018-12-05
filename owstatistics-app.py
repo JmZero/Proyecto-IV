@@ -21,7 +21,7 @@ def info(battletag):
 	if perfil == False:
 		perfil = 'Privado'
 
-	return jsonify(perfil=datos, nivel=nivel)
+	return jsonify(perfil=perfil, nivel=nivel)
 
 @app.errorhandler(404)
 def page_not_found(error):
