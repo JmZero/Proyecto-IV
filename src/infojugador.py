@@ -11,7 +11,7 @@ class InfoJugador:
 
 	# Función que devolverá el status
 	def status(self):
-        return "OK"
+		return "OK"
 
 	# Función que devolverá el Id del jugador
 	def getBattleTag(self, user):
