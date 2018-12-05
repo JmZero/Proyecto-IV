@@ -10,6 +10,9 @@ class InfoJugadorTest(unittest.TestCase):
 
     test = infojugador.InfoJugador()
 
+    def testStatus(self):
+        self.assertEqual(self.test.status(),str('OK'),"El status no es correcto")
+
     def testBattleTag(self):
         self.assertEqual(self.test.getBattleTag(1),False,"El battletag no puede ser un número")
         self.assertEqual(self.test.getBattleTag("JmZero"),str('JmZero'),"El Battletag no es correcto")
