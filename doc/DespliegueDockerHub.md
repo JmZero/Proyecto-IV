@@ -30,7 +30,7 @@ EL contenido de **Dockerfile** es el siguiente:
 
 ```
 # Imagen de Python a usar
-FROM python:3.6
+FROM python:3.6-alpine
 
 # Directorio de alojamiento de la aplicación
 WORKDIR /app
@@ -47,6 +47,9 @@ RUN pip install -r requirements.txt
 # Run app.py when the container launches
 CMD gunicorn owstatistics-app:app --log-file -
 ```
+
+**Nota: se ha decidido utilizar la imagen alpine ya que la versión por defecto es demasiado grande. Para más información consulte ![aquí](https://github.com/jfloff/alpine-python#why)**
+
 Vamos a realizar directamente el despliegue del contenedor en Heroku, como ya habiamos realizado anteriormente desde GitHub.
 
 Para ello debemos especificarle a Heroku que lo que vamos a desplegar es un contenedor y para ello crearemos un archivo **heroku.yml** que le indicará a Heroku como ha de construir el contenedor y como ejecutarse desde el Dockerfile.
