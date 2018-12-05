@@ -9,6 +9,14 @@ class InfoJugador:
 		with open('./resrc/jugadores.json', 'r') as f:
 			self.ap = json.load(f)
 
+	def status(self):
+        """
+        Retorna el estado de la clase
+        Returns:
+        string: return OK
+        """
+        return "OK
+		
 	# Función que devolverá el Id del jugador
 	def getBattleTag(self, user):
 		for i in self.ap:

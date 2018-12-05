@@ -1,6 +1,6 @@
 {
    "status": "OK",
-   "ejemplo": { "ruta": "/ruta/parametro",
-                "valor": "{JSON: devuelto}"
+   "ejemplo": { "ruta": "/status",
+                "valor": "{'nombre': 'JmZero', 'datos': { 'correo': jesus.jalru@gmail.com, 'GitHub Nick': 'JmZero' } }"
               }
 }
