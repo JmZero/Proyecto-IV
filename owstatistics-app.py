@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify
+import json
 import sys
 sys.path.append('./src/')
 import infojugador
@@ -14,14 +15,10 @@ def inicio():
 	p=infojugador.InfoJugador()
 	status=p.status()
 
-
-	#if status == 'OK':
-		#return jsonify(status="Ok")
-	#else:
-		#with open('status.json') as f:
-			#salida = json.load(f)
-			#return salida
-	return jsonify(status=status)
+	if status == 'OK':
+		with open('status.json') as f:
+			salida = json.load(f)
+	return salida
 
 @app.route('/player/<battletag>')
 def info(battletag):
