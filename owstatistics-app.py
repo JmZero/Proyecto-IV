@@ -35,7 +35,6 @@ def showTop5(battletag):
 		top5=p.getTop5(battletag)
 		return jsonify(top5_personajes=top5)
 	else:
-		top5=p.getTop5(battletag)
 		return 'Este perfil es privado, no se pude obtener información'
 
 @app.errorhandler(404)
