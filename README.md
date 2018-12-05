@@ -8,6 +8,25 @@ Mediante el uso del BattleTag (o identificador de usuario) de un jugador podrás
 ## Licencia
 [![AGPL](https://camo.githubusercontent.com/cb1d26ec555a33e9f09fe279b5edc49996a3bb3b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4147504c25323076332d626c75652e737667)](https://www.gnu.org/licenses/agpl.html)
 
+## Instalación
+- Clonar el repositorio:
+```
+git clone git@github.com:JmZero/Proyecto-IV.git
+```
+
+- Instalar todo lo requerido:
+```
+pip3 install -r requirements.txt
+```
+
+- Comprobar que pasa los test:
+```
+python3 test/test.py
+```
+- Ejecutar la aplicación:
+```
+python3 owstatistics-app.py
+```
 ## Integración Continua
 Para llevar a cabo la Integración Continua usaremos [Travis-CI](https://travis-ci.com/) como podemos ver en las herramientas. Esta estará vinculada a nuestro repositorio del proyecto.
 
