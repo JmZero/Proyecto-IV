@@ -16,9 +16,9 @@ def inicio():
 	status=p.status()
 
 	if status == 'OK':
-		#with open('status.json') as f:
-			#salida = json.load(f)
-		return jsonify(status=status)
+		with open('status.json') as f:
+			salida = json.load(f)
+		return jsonify(status=salida)
 
 @app.route('/player/<battletag>')
 def info(battletag):
