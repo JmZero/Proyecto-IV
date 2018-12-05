@@ -48,7 +48,7 @@ RUN pip install -r requirements.txt
 CMD gunicorn owstatistics-app:app --log-file -
 ```
 
-**Nota: se ha decidido utilizar la imagen alpine ya que la versión por defecto es demasiado grande. Para más información consulte ![aquí](https://github.com/jfloff/alpine-python#why)**
+**Nota: se ha decidido utilizar la imagen alpine ya que la versión por defecto es demasiado grande. Para más información consulte [aquí](https://github.com/jfloff/alpine-python#why)**
 
 Vamos a realizar directamente el despliegue del contenedor en Heroku, como ya habiamos realizado anteriormente desde GitHub.
 
