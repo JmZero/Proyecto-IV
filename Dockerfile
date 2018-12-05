@@ -1,5 +1,5 @@
 # Imagen de Python a usar
-FROM python:3.6
+FROM python:3.6-alpine
 
 # Directorio de alojamiento de la aplicación
 WORKDIR /app
@@ -14,4 +14,4 @@ EXPOSE 80
 RUN pip install -r requirements.txt
 
 # Run app.py when the container launches
-CMD gunicorn owstatistics-app:app --log-file -
+CMD gunicorn owstatistics-app:app
