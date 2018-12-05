@@ -18,10 +18,25 @@ def info(battletag):
 	p=infojugador.InfoJugador()
 	perfil=p.isPerfilPublico(battletag)
 	nivel=p.getNivel(battletag)
+
 	if perfil == False:
 		perfil = 'Privado'
+		return jsonify(perfil=perfil, nivel=nivel)
+	else:
+		top5=p.getTop5(battletag)
+		return jsonify(perfil=perfil, nivel=nivel, top5_personajes=top5)
 
-	return jsonify(nivel=nivel, perfil=perfil)
+@app.route('/player/<battletag>/top5')
+def showTop5(battletag):
+	p=infojugador.InfoJugador()
+	perfil=p.isPerfilPublico(battletag)
+
+	if perfil != False:
+		top5=p.getTop5(battletag)
+		return jsonify(top5_personajes=top5)
+	else:
+		top5=p.getTop5(battletag)
+		return 'Este perfil es privado, no se pude obtener información'
 
 @app.errorhandler(404)
 def page_not_found(error):
