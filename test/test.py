@@ -27,8 +27,5 @@ class InfoJugadorTest(unittest.TestCase):
     def testTop5(self):
         self.assertEqual(self.test.getTop5("Neim"),False,"El perfil es público")
 
-    def testAddUser(self):
-        self.assertEqual(self.test.setJugador("JuSan", "Publico"),True,"El jugador se añadió correctamente")
-
 if __name__ == '__main__':
     unittest.main()

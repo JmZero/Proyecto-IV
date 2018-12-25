@@ -47,13 +47,3 @@ class InfoJugador:
 				return i["top5"]
 			else:
 				return False
-
-	# Función que añadirá un nuevo jugador
-	def setJugador(self, user, perfil):
-		try:
-			self.ap.append({"battletag":user, "perfil":perfil})
-			with open('./resrc/jugadores.json', 'w') as f:
-				json.dump(self.ap, f)
-			return True
-		except:
-			return False
