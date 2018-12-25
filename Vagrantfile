@@ -2,6 +2,8 @@ Vagrant.configure('2') do |config|
   config.vm.box = 'azure'
 
   config.ssh.private_key_path = '~/.ssh/id_rsa'
+  #config.vm.network 'public_network'
+  #config.vm.network 'forwarded_port', guest: 80, host: 8080
   config.vm.provider :azure do |azure, override|
 
     azure.tenant_id = ENV['AZURE_TENANT_ID']
@@ -11,7 +13,7 @@ Vagrant.configure('2') do |config|
 
     azure.vm_name = "owstatistics"
     azure.vm_size = "Standard_D2_v2"
-    azure.tcp_endpoints = "80"
+    azure.tcp_endpoints = 80
     azure.location = "westeurope"
     azure.admin_username = "jmzero"
 
