@@ -37,7 +37,7 @@ Se va a testear la clase [infojugador.py](https://github.com/JmZero/Proyecto-IV/
 Para realizar los test tendremos que ejecutar el fichero [test.py](https://github.com/JmZero/Proyecto-IV/blob/master/test/test.py)
 Para más información de cómo implementar la integración continua click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/InteracionContinua.md)
 
-### Depliegue por medio de Heroku
+## Depliegue por medio de Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -46,10 +46,15 @@ Una vez registrados en [Heroku](https://www.heroku.com/) y realizado el desplieg
 
 Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueHeroku.md).
 
-### Despliegue en Docker Hub
+## Despliegue en Docker Hub
 
 - Enlace al despliegue en Docker Hub: [Despliegue Docker Hub](https://hub.docker.com/r/jmzerox/proyecto-iv/)
 
 - Enlace al despliegue en Heroku (con el contenedor): [Despliegue Heroku](https://owstatistics.herokuapp.com/)
 
 Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueDockerHub.md).
+
+## Despliegue desde 0 de una aplicación en la nube
+El despliegue final se ha llevado a cabo en **http://owstatistics.westeurope.cloudapp.azure.com/**
+
+Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueFinal.md).
