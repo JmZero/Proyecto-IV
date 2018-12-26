@@ -55,11 +55,14 @@ Tras el provisionamiento, se procederá a crear y configurar la máquina virtual
 2.1. **Instalacion de Azure CLI y login en Azure**
 En primer lugar se deberá instalar Azure CLI. Para ello se ha seguido los pasos que nos proporciona la web de Azure y que se puede encontrar [aquí](https://docs.microsoft.com/es-es/cli/azure/install-azure-cli-apt?view=azure-cli-latest). En mi caso me dio algunos problemas al instalarlo y [aquí](https://docs.microsoft.com/es-es/cli/azure/install-azure-cli-linux?view=azure-cli-latest) conseguí solucionarlo.
 Una vez instalado tendremos que tener una cuenta en Azure y por tanto, estar registrados. Una vez registrados se procederá a ejecutar el comando `az login` en la terminal, el cual nos redirigirá para acceder a la cuenta de Azure que hemos creado.
+
 ![login_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/login_azure.png)
+
 Se puede ver que los datos mostrados corresponden a la suscripción actual de Azure, en este caso una suscripción para estudiantes.
 
 2.2. **Creación de Azure Active Directory con acceso a Azure Resource Manage**
 Mediante el comando `az ad sp create-for-rbac` se creará un Azure Active Directory con acceso a Azure Resource Manager para la suscripción actual.
+
 ![aad_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/aad_azure.png)
 
 2.3. **Exportación de variables de entorno**
@@ -68,6 +71,7 @@ Es recomendable, previa creación del archivo Vagrantfile, la exportacion de cie
 * AZURE_CLIENT_ID = campo "appID" del apartado anterior
 * AZURE_CLIENT_SECRET = campo "password" del apartado anterior
 * AZURE_SUBSCRIPTION_ID = obtenido al ejecutar el comando `az account list --query "[?isDefault].id" -o tsv`
+
 ![variables_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/variables_azure.png)
 
 Este paso y el anterior se realizan con el fin de no colocar en el archivo `Vagrantfile` que crearemos en el siguiente punto los valores de las variables directamente en él.
@@ -112,8 +116,11 @@ Para poder desplegar la máquina virtual será necesario hacer uso de `vagrant-a
 2.6. **Despliegue**
 Para llevar a cabo el despliegue ejecutaremos el comando `vagrant up --provider=azure` en la carpeta donde se tenga el proyecto.
 Para la creación de la máquina se hará uso del archivo Vagrantfile creado con anterioridad, de  tal forma que también se realizará el provisionamiento.
+
 ![vagrant_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/vagrant_azure.png)
+
 Como se ve el proceso se ha realizado de forma correcta, aunque también podremos verificarlo en la cuenta de Azure.
+
 ![cuenta_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/cuenta_azure.png)
 
 ## 3. Automatización del Despliegue
