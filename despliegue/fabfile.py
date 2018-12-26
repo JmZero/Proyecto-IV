@@ -15,4 +15,4 @@ def Actualizar():
 def Iniciar():
 
      # Iniciar el servicio web
-     run('cd Proyecto-IV/ && sudo gunicorn owstatistics-app:app -b 0.0.0.0:80')
+     run('sudo gunicorn owstatistics-app:app -b 0.0.0.0:80')

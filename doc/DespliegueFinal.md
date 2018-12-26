@@ -32,7 +32,7 @@ El archivo tendrá el siguiente contenido:
     become: true
     apt: pkg=python3.6 state=present
 
-  - name: Instalacion de pip3
+  - name: Instalar pip3
     become: true
     command: sudo apt-get -y install python3-pip
 
@@ -156,6 +156,8 @@ En estos ejemplos se muetra el funcionamiento de ambas funciones:
 
 ![fabfile1](https://github.com/JmZero/Proyecto-IV/blob/master/img/fabfile1.png)
 ![fabfile2](https://github.com/JmZero/Proyecto-IV/blob/master/img/fabfile2.png)
+
+**NOTA: En caso de producirse algun error al ejecutar los comandos anteriores se recomienda cambiar la version de python a la 2.7**
 
 Como resultado del proceso se podrá ver el funcionamiento de la aplicación mirando el DNS `http://owstatistics.westeurope.cloudapp.azure.com`
 
