@@ -55,6 +55,6 @@ Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyec
 Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueDockerHub.md).
 
 ## Despliegue desde 0 de una aplicación en la nube
-El despliegue final se ha llevado a cabo en **owstatistics.westeurope.cloudapp.azure.com**
+Despliegue final: owstatistics.westeurope.cloudapp.azure.com
 
 Para ver el proceso de despliegue click [aquí](https://github.com/JmZero/Proyecto-IV/blob/master/doc/DespliegueFinal.md).
