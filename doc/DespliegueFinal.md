@@ -107,7 +107,7 @@ end
 ```
 
 En primer lugar tendremos que asignar las diferentes variables de entorno que creamos en el apartado anterior.
-Tras esto se colocarán las variables relacionadas con la máquina, como son el nombre, el puerto, su tamaño, etc.
+Tras esto se colocarán las variables relacionadas con la máquina, como son el nombre, el puerto, su tamaño(en este caso de proposito general), etc.
 Por último se escribirá una función la cual tendrá como proposito el uso del archivo de provisionamiento que se habrá creado en el primer punto haciendo uso de **Ansible**.
 
 2.5. **Instalación Vagrant-Azure**
@@ -148,9 +148,14 @@ def Iniciar():
      run('cd Proyecto-IV/ && sudo gunicorn owstatistics-app:app -b 0.0.0.0:80')
 ```
 
-Como se puede ver, se han definido dos funciones, una que se encargará de actualizar el repositorio y la otra encargada de iniciar la aplicación.
+Como se puede ver, se han definido dos funciones, una que se encargará de actualizar el repositorio, borrando el repositorio actual, conandolo desde GitHub e instalando todo lo requerido y la otra encargada de iniciar la aplicación mediante gunicorn.
 
 Para poder ejecutar alguna función tendrá que usarse el comando `fab -f ./despliegue/fabfile.py -H vagrant@owstatistics.westeurope.cloudapp.azure.com "funcion"`
+
+En estos ejemplos se muetra el funcionamiento de ambas funciones:
+
+![fabfile1](https://github.com/JmZero/Proyecto-IV/blob/master/img/fabfile1.png)
+![fabfile2](https://github.com/JmZero/Proyecto-IV/blob/master/img/fabfile2.png)
 
 Como resultado del proceso se podrá ver el funcionamiento de la aplicación mirando el DNS `http://owstatistics.westeurope.cloudapp.azure.com`
 
