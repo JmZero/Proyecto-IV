@@ -12,6 +12,7 @@ En primer lugar se instalará **Ansible** en la máquina host y se configurará 
 [owstatistics]
 owstatistics.westeurope.cloudapp.azure.com
 ```
+Para mas información consultar [aquí](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html).
 Se creará un archivo **playbook.yml**. En el describiremos la política que se debe aplicar a nuestra máquina virtual, como se ha dicho antes, para el correcto funcionamiento de la aplicación.
 El archivo tendrá el siguiente contenido:
 ```
@@ -49,6 +50,8 @@ El archivo tendrá el siguiente contenido:
 
 En primer lugar se definirá un item que en este caso se realizará para todos los host, y bajo este item se definirán las diferentes tareas a realizar, como son la instalación del lenguaje de python que necesitaremos, la instalación de GitHub o el clonado del repositorio.
 
+Para más información de como realizar el archivo hacer uso de la guia propuesta por **Ansible** en el siguiente [enlace](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html)
+
 ## 2. Creación de la máquina virtual
 Tras el provisionamiento, se procederá a crear y configurar la máquina virtual que alojaremos en [Azure](https://azure.microsoft.com/es-es/). En este caso se hará uso de Vagrant para la creación de la máquina virtual.
 
@@ -60,7 +63,7 @@ Una vez instalado tendremos que tener una cuenta en Azure y por tanto, estar reg
 
 Se puede ver que los datos mostrados corresponden a la suscripción actual de Azure, en este caso una suscripción para estudiantes.
 
-2.2. **Creación de Azure Active Directory con acceso a Azure Resource Manage**
+2.2. **Creación de una Azure Active Directory**
 Mediante el comando `az ad sp create-for-rbac` se creará un Azure Active Directory con acceso a Azure Resource Manager para la suscripción actual.
 
 ![aad_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/aad_azure.png)
@@ -123,6 +126,8 @@ Como se ve el proceso se ha realizado de forma correcta, aunque también podremo
 
 ![cuenta_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/cuenta_azure.png)
 
+Para realizar este proceso se han seguido los pasos explicados por la cuenta de **Azure** de GitHub, para mas informaciación click [aquí](https://github.com/Azure/vagrant-azure).
+
 ## 3. Automatización del Despliegue
 Será de gran utilidad poder realizar todo el proceso de despliegue de forma automática. Para ello se hará uso de **Fabric**. Mediante el archivo `fabfile.py` se podran ejecutar una serie de ordenes que estarán definidas en este archivo y ejecutarán las ordenes correspondientes para la automatización.
 
@@ -145,12 +150,14 @@ def Actualizar():
 def Iniciar():
 
      # Iniciar el servicio web
-     run('cd Proyecto-IV/ && sudo gunicorn owstatistics-app:app -b 0.0.0.0:80')
+     run('sudo gunicorn owstatistics-app:app -b 0.0.0.0:80')
 ```
 
 Como se puede ver, se han definido dos funciones, una que se encargará de actualizar el repositorio, borrando el repositorio actual, conandolo desde GitHub e instalando todo lo requerido y la otra encargada de iniciar la aplicación mediante gunicorn.
 
 Para poder ejecutar alguna función tendrá que usarse el comando `fab -f ./despliegue/fabfile.py -H vagrant@owstatistics.westeurope.cloudapp.azure.com "funcion"`
+
+Para mas información a cerca de usar **Fabric** consulte [aquí](https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments) o [aquí](http://docs.fabfile.org/en/1.14/tutorial.html). Para ver también como realizar un fabfile ademas he consultado a un compañero que cursó la asignatura con anteridad para averiguar la estructura que debería seguir el archivo. Adjunto el GitHub del compañero [JaoChaos](https://github.com/JaoChaos).
 
 En estos ejemplos se muetra el funcionamiento de ambas funciones:
 
