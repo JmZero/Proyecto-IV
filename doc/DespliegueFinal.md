@@ -13,6 +13,7 @@ En primer lugar se instalará **Ansible** en la máquina host y se configurará 
 owstatistics.westeurope.cloudapp.azure.com
 ```
 Para mas información consultar [aquí](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html).
+
 Se creará un archivo **playbook.yml**. En el describiremos la política que se debe aplicar a nuestra máquina virtual, como se ha dicho antes, para el correcto funcionamiento de la aplicación.
 El archivo tendrá el siguiente contenido:
 ```
@@ -55,7 +56,8 @@ Para más información de como realizar el archivo hacer uso de la guia propuest
 ## 2. Creación de la máquina virtual
 Tras el provisionamiento, se procederá a crear y configurar la máquina virtual que alojaremos en [Azure](https://azure.microsoft.com/es-es/). En este caso se hará uso de Vagrant para la creación de la máquina virtual.
 
-2.1. **Instalacion de Azure CLI y login en Azure**
+### 2.1. **Instalacion de Azure CLI y login en Azure**
+
 En primer lugar se deberá instalar Azure CLI. Para ello se ha seguido los pasos que nos proporciona la web de Azure y que se puede encontrar [aquí](https://docs.microsoft.com/es-es/cli/azure/install-azure-cli-apt?view=azure-cli-latest). En mi caso me dio algunos problemas al instalarlo y [aquí](https://docs.microsoft.com/es-es/cli/azure/install-azure-cli-linux?view=azure-cli-latest) conseguí solucionarlo.
 Una vez instalado tendremos que tener una cuenta en Azure y por tanto, estar registrados. Una vez registrados se procederá a ejecutar el comando `az login` en la terminal, el cual nos redirigirá para acceder a la cuenta de Azure que hemos creado.
 
@@ -63,12 +65,14 @@ Una vez instalado tendremos que tener una cuenta en Azure y por tanto, estar reg
 
 Se puede ver que los datos mostrados corresponden a la suscripción actual de Azure, en este caso una suscripción para estudiantes.
 
-2.2. **Creación de una Azure Active Directory**
+### 2.2. **Creación de una Azure Active Directory**
+
 Mediante el comando `az ad sp create-for-rbac` se creará un Azure Active Directory con acceso a Azure Resource Manager para la suscripción actual.
 
 ![aad_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/aad_azure.png)
 
-2.3. **Exportación de variables de entorno**
+### 2.3. **Exportación de variables de entorno**
+
 Es recomendable, previa creación del archivo Vagrantfile, la exportacion de ciertas variables de entorno asociadas a Azure, estas serán las siguientes:
 * AZURE_TENANT_ID = campo "tenant" del apartado anterior
 * AZURE_CLIENT_ID = campo "appID" del apartado anterior
@@ -79,7 +83,8 @@ Es recomendable, previa creación del archivo Vagrantfile, la exportacion de cie
 
 Este paso y el anterior se realizan con el fin de no colocar en el archivo `Vagrantfile` que crearemos en el siguiente punto los valores de las variables directamente en él.
 
-2.4. **Creación del archivo Vagrantfile**
+### 2.4. **Creación del archivo Vagrantfile**
+
 LLegados a este punto se creará un archivo Vagrantfile, el cual tendrá la funcionalidad de construir y provisionar junto con el archivo `playbook.yml` la máquina virtual.
 El archivo tendrá el siguiente contenido:
 ```
@@ -113,10 +118,10 @@ En primer lugar tendremos que asignar las diferentes variables de entorno que cr
 Tras esto se colocarán las variables relacionadas con la máquina, como son el nombre, el puerto, su tamaño(en este caso de proposito general), etc.
 Por último se escribirá una función la cual tendrá como proposito el uso del archivo de provisionamiento que se habrá creado en el primer punto haciendo uso de **Ansible**.
 
-2.5. **Instalación Vagrant-Azure**
+### 2.5. **Instalación Vagrant-Azure**
 Para poder desplegar la máquina virtual será necesario hacer uso de `vagrant-azure`, el cual se utiliza para desplegar una máquina virtual creada por Vagrant en Azure. Para su instalación ejecutaremos el comando `vagrant plugin install vagrant-azure` (En mi caso surgió un problema debido a la versión de Vagrant, por lo que es recomendable descargar e instalar la última versión disponible).
 
-2.6. **Despliegue**
+### 2.6. **Despliegue**
 Para llevar a cabo el despliegue ejecutaremos el comando `vagrant up --provider=azure` en la carpeta donde se tenga el proyecto.
 Para la creación de la máquina se hará uso del archivo Vagrantfile creado con anterioridad, de  tal forma que también se realizará el provisionamiento.
 
