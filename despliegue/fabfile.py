@@ -1,5 +1,11 @@
 from fabric.api import *
 
+#Se indica el host al que se va a conectar
+env.hosts = ['owstatistics.westeurope.cloudapp.azure.com']
+#Se define el nombre de usuario para conectarse a la MV
+env.user = 'vagrant'
+
+#Actualización de la versión del proyecto
 def Actualizar():
 
     # Eliminamos la version anterior de la aplicación
@@ -15,4 +21,5 @@ def Actualizar():
 def Iniciar():
 
      # Iniciar el servicio web
-     run('sudo gunicorn owstatistics-app:app -b 0.0.0.0:80')
+     with cd("Proyecto-IV/"):
+         sudo('gunicorn owstatistics-app:app -b 0.0.0.0:80')

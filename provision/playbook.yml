@@ -1,5 +1,5 @@
 - hosts: all          #Especifico la validez del archivo (en este caso para todos los host)
-  sudo: yes           #Se permite el uso de sudo
+  become: yes           #Se permite el uso de sudo
   remote_user: jmzero #Especifico el usuaro de la máquina
 
   tasks:
