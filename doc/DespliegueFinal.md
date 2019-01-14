@@ -17,34 +17,41 @@ Para mas información consultar [aquí](https://docs.ansible.com/ansible/latest/
 Se creará un archivo **playbook.yml**. En el describiremos la política que se debe aplicar a nuestra máquina virtual, como se ha dicho antes, para el correcto funcionamiento de la aplicación.
 El archivo tendrá el siguiente contenido:
 ```
-- hosts: all
-  sudo: yes
-  remote_user: jmzero
+- hosts: all          #Especifico la validez del archivo (en este caso para todos los host)
+  become: yes           #Se permite el uso de sudo
+  remote_user: jmzero #Especifico el usuaro de la máquina
 
   tasks:
+    #Se añade un repositorio con la version 3.6 de python, indicando donde encontrarlo.
   - name: Añadir repositorio de python 3.6
     become: true
     apt_repository: repo=ppa:deadsnakes/ppa state=present
 
+    #Se actualiza el sistema por el comando update
   - name: Actualizar sistema
     become: true
     command: sudo apt-get update
 
+    #Se instala python3.6 en caso de no estar instalado
   - name: Instalar Python 3.6
     become: true
     apt: pkg=python3.6 state=present
 
-  - name: Instalar pip3
+    #Se instala pip3
+  - name: Instalacion de pip3
     become: true
     command: sudo apt-get -y install python3-pip
 
+    #Se instala git para poder hacer uso del repositorio de GitHub en caso de no estar instalado
   - name: Instalar GitHub
     become: true
     command: sudo apt-get install -y git
 
+    #Se clona el repositorio de GitHub
   - name: Clonar repositorio de GitHub
     git: repo=https://github.com/JmZero/Proyecto-IV.git dest=owstatistics/ force=yes
 
+    #Se instalan las dependencias necesarias para el proyecto
   - name: Instalar Requerimientos
     command: pip3 install -r owstatistics/requirements.txt
 ```
@@ -88,27 +95,34 @@ Este paso y el anterior se realizan con el fin de no colocar en el archivo `Vagr
 LLegados a este punto se creará un archivo Vagrantfile, el cual tendrá la funcionalidad de construir y provisionar junto con el archivo `playbook.yml` la máquina virtual.
 El archivo tendrá el siguiente contenido:
 ```
+#Se usara la version 2 del plugin azure-vagrant
 Vagrant.configure('2') do |config|
-  config.vm.box = 'azure'
+  config.vm.box = 'azure' #Especificaremos este parametro para evitar errores en vagrant up y será la base para el funcionamiento.
+  #Se usa la imagen especificada en urn en el apartado azure provider
 
+  #Configuracion de la conexion a traves de ssh
   config.ssh.private_key_path = '~/.ssh/id_rsa'
-  config.vm.provider :azure do |azure, override|
+  config.vm.provider :azure do |owstatistics, override| #Se crea una nueva variable owstatistics para darle información al proveedor de las variables
+                                                        #necesarias para la creación de la máquina virtual
 
-    azure.tenant_id = ENV['AZURE_TENANT_ID']
-    azure.client_id = ENV['AZURE_CLIENT_ID']
-    azure.client_secret = ENV['AZURE_CLIENT_SECRET']
-    azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+    #Exportación de las variables encargadas de identificar la cuenta de azure
+    owstatistics.tenant_id = ENV['AZURE_TENANT_ID']
+    owstatistics.client_id = ENV['AZURE_CLIENT_ID']
+    owstatistics.client_secret = ENV['AZURE_CLIENT_SECRET']
+    owstatistics.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
 
-    azure.vm_name = "owstatistics"
-    azure.vm_size = "Standard_D2_v2"
-    azure.tcp_endpoints = "80"
-    azure.location = "westeurope"
-    azure.admin_username = "jmzero"
+    #Parametros adicionales de la máquina virtual
+    owstatistics.vm_name = "owstatistics"    #Se da un nombre a la MV
+    owstatistics.vm_size = "Standard_D2_v2"  #Se establece el tamaño a usar
+    owstatistics.tcp_endpoints = 80          #Se establece el puerto el puerto 80 para la máquina
+    owstatistics.location = "westeurope"     #Se establece la locacización de la MV
+    owstatistics.admin_username = "jmzero"   #Se establece el nombre para el root de la máquina
 
   end
 
-  config.vm.provision :ansible do |ansible|
-      ansible.playbook = "provision/playbook.yml"
+  #Se realiza el provisionamiento de la máquina
+  config.vm.provision :ansible do |provision|
+      provision.playbook = "provision/playbook.yml" #Provision de la MV
   end
 
 end
@@ -131,7 +145,7 @@ Como se ve el proceso se ha realizado de forma correcta, aunque también podremo
 
 ![cuenta_azure](https://github.com/JmZero/Proyecto-IV/blob/master/img/cuenta_azure.png)
 
-Para realizar este proceso se han seguido los pasos explicados por la cuenta de **Azure** de GitHub, para mas informaciación click [aquí](https://github.com/Azure/vagrant-azure).
+Para realizar este proceso se han seguido los pasos explicados por la cuenta de **Azure** de GitHub, para mas informaciación click [aquí](https://github.com/Azure/vagrant-azure). Se explica detalladamente en cada línea del vagrantfile lo que hace gracias a la documentación mencionada antes y a cieta información propuesta por el profesor de la asignatura como la [siguiente](https://stackoverflow.com/questions/7065421/could-implicit-topics-be-implemented-cleanly-in-a-language/7066007#7066007).
 
 ## 3. Automatización del Despliegue
 Será de gran utilidad poder realizar todo el proceso de despliegue de forma automática. Para ello se hará uso de **Fabric**. Mediante el archivo `fabfile.py` se podran ejecutar una serie de ordenes que estarán definidas en este archivo y ejecutarán las ordenes correspondientes para la automatización.
