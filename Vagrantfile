@@ -15,11 +15,11 @@ Vagrant.configure('2') do |config|
     owstatistics.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
 
     #Parametros adicionales de la máquina virtual
-    azure.vm_name = "owstatistics"    #Se da un nombre a la MV
-    azure.vm_size = "Standard_D2_v2"  #Se establece el tamaño a usar
-    azure.tcp_endpoints = 80          #Se establece el puerto el puerto 80 para la máquina
-    azure.location = "westeurope"     #Se establece la locacización de la MV
-    azure.admin_username = "jmzero"   #Se establece el nombre para el root de la máquina
+    owstatistics.vm_name = "owstatistics"    #Se da un nombre a la MV
+    owstatistics.vm_size = "Standard_D2_v2"  #Se establece el tamaño a usar
+    owstatistics.tcp_endpoints = 80          #Se establece el puerto el puerto 80 para la máquina
+    owstatistics.location = "westeurope"     #Se establece la locacización de la MV
+    owstatistics.admin_username = "jmzero"   #Se establece el nombre para el root de la máquina
 
   end
 
