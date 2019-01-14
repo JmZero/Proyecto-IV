@@ -1,26 +1,31 @@
+#Se usara la version 2 del plugin azure-vagrant
 Vagrant.configure('2') do |config|
-  config.vm.box = 'azure'
+  config.vm.box = 'azure' #Especificaremos este parametro para evitar errores en vagrant up y será la base para el funcionamiento.
+  #Se usa la imagen especificada en urn en el apartado azure provider
 
+  #Configuracion de la conexion a traves de ssh
   config.ssh.private_key_path = '~/.ssh/id_rsa'
-  #config.vm.network 'public_network'
-  #config.vm.network 'forwarded_port', guest: 80, host: 8080
-  config.vm.provider :azure do |azure, override|
+  config.vm.provider :azure do |owstatistics, override| #Se crea una nueva variable owstatistics para darle información al proveedor de las variables
+                                                        #necesarias para la creación de la máquina virtual
 
-    azure.tenant_id = ENV['AZURE_TENANT_ID']
-    azure.client_id = ENV['AZURE_CLIENT_ID']
-    azure.client_secret = ENV['AZURE_CLIENT_SECRET']
-    azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+    #Exportación de las variables encargadas de identificar la cuenta de azure
+    owstatistics.tenant_id = ENV['AZURE_TENANT_ID']
+    owstatistics.client_id = ENV['AZURE_CLIENT_ID']
+    owstatistics.client_secret = ENV['AZURE_CLIENT_SECRET']
+    owstatistics.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
 
-    azure.vm_name = "owstatistics"
-    azure.vm_size = "Standard_D2_v2"
-    azure.tcp_endpoints = 80
-    azure.location = "westeurope"
-    azure.admin_username = "jmzero"
+    #Parametros adicionales de la máquina virtual
+    azure.vm_name = "owstatistics"    #Se da un nombre a la MV
+    azure.vm_size = "Standard_D2_v2"  #Se establece el tamaño a usar
+    azure.tcp_endpoints = 80          #Se establece el puerto el puerto 80 para la máquina
+    azure.location = "westeurope"     #Se establece la locacización de la MV
+    azure.admin_username = "jmzero"   #Se establece el nombre para el root de la máquina
 
   end
 
-  config.vm.provision :ansible do |ansible|
-      ansible.playbook = "provision/playbook.yml"
+  #Se realiza el provisionamiento de la máquina
+  config.vm.provision :ansible do |provision|
+      provision.playbook = "provision/playbook.yml" #Provision de la MV
   end
 
 end
